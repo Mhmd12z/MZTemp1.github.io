@@ -1,0 +1,532 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+body{
+  background-color: var(--color-mode);
+  opacity: 0;
+}
+:root {
+  --primary-color: #3bd5c5;
+  --color-mode: white;
+  --secondary: black;
+  --third:#eee;
+  --main-transition: all .3s ease-in-out;
+}
+.dark-mode{
+  --color-mode: black;
+  --secondary: white;
+  --third:rgb(57, 57, 57);
+
+}
+.nav{
+  background-color: var(--color-mode);
+  color: var(--secondary);
+}
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: 40px;
+}
+.logo span {
+  color: var(--primary-color);
+}
+.nav .links-icon {
+  font-size: 30px;
+  cursor: pointer;
+}
+.links {
+  position: absolute;
+  bottom: -270%;
+  right: 0;
+  z-index: 100;
+  list-style-type: none;
+  background-color: var(--third);
+  transition: var(--main-transition);
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--secondary);
+  border-left: 2px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: var(--third);
+  padding: 5px;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: var(--main-transition);
+}
+
+.close {
+  opacity: 0;
+  z-index: -1;
+}
+.links li {
+  background-color: #eee;
+  padding: 10px;
+  width: 200px;
+}
+.links a:hover {
+  color: white;
+  font-weight: 700;
+}
+.links a:hover::before {
+  left: 0;
+}
+.links a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--primary-color);
+  transition: var(--main-transition) ;
+}
+@media (min-width: 992px) {
+  .links li:first-child::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    border: 12px solid;
+    border-color: transparent transparent #eee transparent;
+    top: -25px;
+  }
+}
+@media (max-width: 992px) {
+  .links {
+    width: 100%;
+    right: 0;
+  }
+  .links li {
+    width: 100%;
+  }
+  .links a {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .links {
+    right: 0px;
+  }
+}
+.home {
+  position: relative;
+  background-color: var(--color-mode);
+}
+.home .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  height: 300px;
+  background: url(/images/black_and_1534817744-1024x475.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.home h1 {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+.home p {
+  max-width: 300px;
+  font-size: 12px;
+  word-spacing: 3px;
+  font-weight: 400;
+}
+.prop{
+  background-color: var(--color-mode);
+  color: var(--secondary);
+}
+.prop .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 0 30px 0;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .prop .container {
+    justify-content: center;
+  }
+}
+.prop div {
+  text-align: center;
+}
+.prop h3 {
+  font-size: 15px;
+}
+.prop p {
+  font-size: 12px;
+  max-width: 200px;
+}
+.prop i {
+  font-size: 30px;
+  color: var(--primary-color);
+  padding-bottom: 30px;
+}
+.title1::before {
+  content: "services";
+}
+
+.title1::after {
+  content: "Don't be busy, be productive";
+}
+.title{
+  position: relative;
+  background-color: var(--color-mode);
+  
+}
+.title::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 4px solid;
+  border-color: var(--third);
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 100px;
+  color: var(--secondary);
+  font-weight: 800;
+}
+
+.title::after {
+  display: flex;
+  min-width: 300px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  color: var(--secondary);
+  transform: translate(-50%,-50%);
+}
+.services{
+  background-color: var(--color-mode);
+  color: var(--secondary);
+}
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  margin: 30px auto 0 auto;
+  gap: 20px;
+  position: relative;
+  padding: 30px 0;
+}
+.services .container .content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.services .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.services .container .cards > div {
+  display: flex;
+  gap: 20px;
+}
+.services .container .cards > div i {
+  font-size: 30px;
+  color: var(--primary-color);
+}
+.services img {
+  width: 85%;
+  height: 100%;
+  z-index: 2;
+}
+.services .container::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #2b4859;
+  z-index: 0;
+}
+.title2{
+  background-color: var(--third);
+}
+.title2::before {
+  content: "Portfolio";
+  background-color: var(--third);
+}
+.title2::after {
+  content: "If you do it right, it will last forever";
+}
+.portfolio{
+  background-color: var(--third);
+  color: var(--secondary);
+}
+.portfolio .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--third);
+  color: var(--secondary);
+  padding: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  gap: 50px;
+}
+.portfolio .columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.portfolio .columns div {
+  background-color: rgba(255, 255, 255, 0.557);
+}
+.portfolio .columns h5,
+.portfolio .columns p {
+  padding: 10px;
+}
+.portfolio img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.portfolio button {
+  margin: 0 auto;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  z-index: 99;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  transition: var(--main-transition);
+}
+.portfolio button::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: black;
+  transition: var(--main-transition);
+}
+.portfolio button:hover{
+  color: white;
+}
+.portfolio button:hover::before{
+  left: 0;
+}
+.title3::before {
+  content: "about";
+}
+.title3::after {
+  content: "Less is more work";
+}
+.about .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: var(--color-mode);
+  color: var(--secondary);
+}
+.about .card-1 {
+  height: 400px;
+  width: 100%;
+  position: relative;
+}
+.about .card-1 div:first-child {
+  width: 250px;
+  position: absolute;
+  height: 100%;
+  width: 100px;
+  background-color: #eeeeee;
+  z-index: 1;
+}
+.about .card-1 div:nth-child(2) {
+  width: 320px;
+  height: 320px;
+  background: url(/images/83502.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #dbd9d9;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 99;
+}
+.about .card-1 div:nth-child(3) {
+  position: absolute;
+  width: 80px;
+  height: 200px;
+  right: 0;
+  background-color: var(--primary-color);
+}
+.about .card-1 div:last-child {
+  width: 100%;
+  height: 70px;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 190px;
+  right: -100px;
+  z-index: 1;
+}
+.about .card-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about .card-2 p:first-child {
+  font-weight: 700;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+.about .card-2 p:last-child {
+  line-height: 30px;
+  padding-top: 10px;
+  position: relative;
+}
+.about .card-2 p:last-child::before {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 0px;
+}
+.title4::before{
+  content: "contact";
+  background-color: var(--third);
+}
+.title4::after{
+  content: "We are born to create";
+}
+.contact{
+  background-color: var(--third);
+}
+.contact .container{
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 20px;
+  background-color: var(--third);
+}
+.contact .title{
+  margin-bottom: 50px;
+  
+}
+.contact h2:nth-child(2){
+  color: #324761;
+}
+.contact h2:nth-child(3){
+  color: var(--primary-color);
+}
+.contact p{
+  font-size: 12px;
+  font-weight: 700;
+}
+.footer{
+  background-color: #324761;
+  color: white;
+  font-weight: 700;
+}
+.footer .container{
+  text-align: center;
+  padding: 20px;
+}
+.footer span{
+  color: var(--primary-color);
+}
+.container {
+  margin: 0 auto;
+  padding: 10px;
+}
+@media (min-width: 767px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+@media (max-width: 767px) {
+  .title::before {
+    font-size: 70px;
+  }
+  .about .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .about .card-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .about .card-1 div:nth-child(2) {
+    position: initial;
+    width: 400px;
+    height: 400px;
+  }
+  .about .card-1 div:not(:nth-child(2)) {
+    display: none;
+  }
+  .about .card-2 {
+    max-width: 350px;
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .services .cards {
+    background-color: var(--color-mode);
+    z-index: 2;
+    padding: 10px;
+  }
+  .services img {
+    display: none;
+  }
+}
