@@ -139,7 +139,7 @@ body{
   justify-content: flex-start;
   text-align: center;
   height: 300px;
-  background: url(./images/black_and_1534817744-1024x475.jpeg);
+  background: url(images/black_and_1534817744-1024x475.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -377,7 +377,7 @@ body{
 .about .card-1 div:nth-child(2) {
   width: 320px;
   height: 320px;
-  background: url(./images/83502.jpg);
+  background: url(images/83502.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
